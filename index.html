@@ -274,6 +274,15 @@ a{color:inherit;text-decoration:none}
 .wrow.linked:hover .wrow__a{transform:translate(6px,-6px)}
 .wsoon{padding:1.9rem 0;font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;color:var(--ink-40);text-transform:uppercase}
 
+/* ---------- writing: category groups ---------- */
+.wgroup{margin-top:2.4rem}
+.wgroup:first-child{margin-top:0}
+.wgroup__label{
+  display:block;font-family:var(--mono);font-size:.66rem;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+  margin-bottom:.6rem;
+}
+
 /* ---------- compact article list (scales cleanly as more are added) ---------- */
 .article-list{margin-top:.5rem}
 .arow{
@@ -287,11 +296,14 @@ a{color:inherit;text-decoration:none}
 .arow__arrow{flex:none;color:var(--ink-40);transition:color .3s,transform .4s cubic-bezier(.16,1,.3,1)}
 .arow:hover .arow__title,.arow:hover .arow__arrow{color:var(--accent)}
 .arow:hover .arow__arrow{transform:translate(4px,-4px)}
+.arow--book .arow__title{font-weight:700}
+.arow--book .store-chips{flex:none;margin-left:0}
 @media(max-width:600px){
   .arow{flex-wrap:wrap;gap:.3rem 1rem}
   .arow__title{flex:1 1 100%;order:3}
   .arow__year{order:1}
   .arow__arrow{order:2;margin-left:auto}
+  .arow--book .store-chips{order:2;margin-left:auto}
 }
 @media(max-width:900px){
   .wrow__meta{grid-column:1/-1;margin-bottom:.6rem}
@@ -863,44 +875,57 @@ a.proof__link:hover{opacity:.7}
     </div>
 
     <div class="wlist rv">
-      <div class="wrow">
-        <span class="wrow__meta gold">Book · 2026</span>
-        <h3 class="wrow__t">
-          『시퀀스씽킹』
-          <span class="store-chips">
-            <a class="store-chip" href="https://product.kyobobook.co.kr/detail/S000219570912" target="_blank" rel="noopener" aria-label="교보문고에서 구매">교보</a>
-            <a class="store-chip" href="https://www.yes24.com/product/goods/184345402" target="_blank" rel="noopener" aria-label="YES24에서 구매">YES24</a>
-          </span>
-        </h3>
+      <div class="wgroup">
+        <span class="wgroup__label">Book</span>
+        <div class="article-list">
+          <div class="arow arow--book">
+            <span class="arow__year">2026</span>
+            <span class="arow__title">『시퀀스씽킹』</span>
+            <span class="store-chips">
+              <a class="store-chip" href="https://product.kyobobook.co.kr/detail/S000219570912" target="_blank" rel="noopener" aria-label="교보문고에서 구매">교보</a>
+              <a class="store-chip" href="https://www.yes24.com/product/goods/184345402" target="_blank" rel="noopener" aria-label="YES24에서 구매">YES24</a>
+            </span>
+          </div>
+        </div>
       </div>
-      <div class="article-list">
-        <a class="arow" href="https://publy.co/content/8153" target="_blank" rel="noopener">
-          <span class="arow__year">2026</span>
-          <span class="arow__title">번아웃 직전에도 업무 퀄리티를 지키는 ‘저전력 모드’ 사용법</span>
-          <span class="arow__arrow" aria-hidden="true">↗</span>
-        </a>
-        <a class="arow" href="https://publy.co/content/8114" target="_blank" rel="noopener">
-          <span class="arow__year">2026</span>
-          <span class="arow__title">성장이 막힌 순간, 더 배우지 말고 ‘잊어야’ 하는 이유</span>
-          <span class="arow__arrow" aria-hidden="true">↗</span>
-        </a>
-        <a class="arow" href="https://publy.co/content/8028" target="_blank" rel="noopener">
-          <span class="arow__year">2026</span>
-          <span class="arow__title">리더의 말솜씨는 죄가 없다, 당신의 지시에 ‘구조’가 없을 뿐</span>
-          <span class="arow__arrow" aria-hidden="true">↗</span>
-        </a>
-        <a class="arow" href="https://publy.co/content/7610" target="_blank" rel="noopener">
-          <span class="arow__year">2024</span>
-          <span class="arow__title">조직을 단단하게 만드는 리더의 조직문화 구조화 3단계 노하우</span>
-          <span class="arow__arrow" aria-hidden="true">↗</span>
-        </a>
-        <a class="arow" href="https://publy.co/content/6967" target="_blank" rel="noopener">
-          <span class="arow__year">2022</span>
-          <span class="arow__title">‘팀원 평가 어떻게 하는 건데’ 능력 수치화 통한 인사평가법</span>
-          <span class="arow__arrow" aria-hidden="true">↗</span>
-        </a>
+
+      <div class="wgroup">
+        <span class="wgroup__label">Article · Publy</span>
+        <div class="article-list">
+          <a class="arow" href="https://publy.co/content/8153" target="_blank" rel="noopener">
+            <span class="arow__year">2026</span>
+            <span class="arow__title">번아웃 직전에도 업무 퀄리티를 지키는 ‘저전력 모드’ 사용법</span>
+            <span class="arow__arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="arow" href="https://publy.co/content/8114" target="_blank" rel="noopener">
+            <span class="arow__year">2026</span>
+            <span class="arow__title">성장이 막힌 순간, 더 배우지 말고 ‘잊어야’ 하는 이유</span>
+            <span class="arow__arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="arow" href="https://publy.co/content/8028" target="_blank" rel="noopener">
+            <span class="arow__year">2026</span>
+            <span class="arow__title">리더의 말솜씨는 죄가 없다, 당신의 지시에 ‘구조’가 없을 뿐</span>
+            <span class="arow__arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="arow" href="https://publy.co/content/7610" target="_blank" rel="noopener">
+            <span class="arow__year">2024</span>
+            <span class="arow__title">조직을 단단하게 만드는 리더의 조직문화 구조화 3단계 노하우</span>
+            <span class="arow__arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="arow" href="https://publy.co/content/6967" target="_blank" rel="noopener">
+            <span class="arow__year">2022</span>
+            <span class="arow__title">‘팀원 평가 어떻게 하는 건데’ 능력 수치화 통한 인사평가법</span>
+            <span class="arow__arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
       </div>
-      <p class="wsoon">More essays, research &amp; books — in progress</p>
+
+      <div class="wgroup">
+        <span class="wgroup__label">Essay · Brunch</span>
+        <div class="article-list">
+          <p class="wsoon">Coming soon</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
