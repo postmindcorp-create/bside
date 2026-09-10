@@ -292,16 +292,32 @@ a{color:inherit;text-decoration:none}
 }
 .article-list .arow:last-child{border-bottom:1px solid var(--rule)}
 .arow__year{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--ink-40);flex:none;width:2.6em}
+.arow__tag{
+  flex:none;font-family:var(--mono);font-size:.62rem;letter-spacing:.04em;
+  color:var(--accent);border:1px solid var(--rule);border-radius:999px;
+  padding:.15rem .6rem;white-space:nowrap;
+}
 .arow__title{flex:1;font-weight:600;font-size:.92rem;letter-spacing:-.01em;line-height:1.4;transition:color .3s}
 .arow__arrow{flex:none;color:var(--ink-40);transition:color .3s,transform .4s cubic-bezier(.16,1,.3,1)}
 .arow:hover .arow__title,.arow:hover .arow__arrow{color:var(--accent)}
 .arow:hover .arow__arrow{transform:translate(4px,-4px)}
 .arow--book .arow__title{font-weight:700}
 .arow--book .store-chips{flex:none;margin-left:0}
+.arow--more .arow__title{color:var(--ink-60);font-weight:600}
+.arow--more:hover .arow__title{color:var(--accent)}
+.article-list .arow[hidden]{display:none}
+.wmore{
+  display:block;width:100%;text-align:left;background:none;border:0;cursor:pointer;
+  padding:.85rem 0;border-top:1px solid var(--rule);
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--ink-40);
+  transition:color .25s;
+}
+.wmore:hover{color:var(--accent)}
 @media(max-width:600px){
   .arow{flex-wrap:wrap;gap:.3rem 1rem}
   .arow__title{flex:1 1 100%;order:3}
   .arow__year{order:1}
+  .arow__tag{order:2}
   .arow__arrow{order:2;margin-left:auto}
   .arow--book .store-chips{order:2;margin-left:auto}
 }
@@ -894,29 +910,34 @@ a.proof__link:hover{opacity:.7}
 
       <div class="wgroup">
         <span class="wgroup__label">Article · Publy</span>
-        <div class="article-list">
+        <div class="article-list" data-max="5">
           <a class="arow" href="https://publy.co/content/8153" target="_blank" rel="noopener">
             <span class="arow__year">2026</span>
+            <span class="arow__tag">에세이</span>
             <span class="arow__title">번아웃 직전에도 업무 퀄리티를 지키는 ‘저전력 모드’ 사용법</span>
             <span class="arow__arrow" aria-hidden="true">↗</span>
           </a>
           <a class="arow" href="https://publy.co/content/8114" target="_blank" rel="noopener">
             <span class="arow__year">2026</span>
+            <span class="arow__tag">에세이</span>
             <span class="arow__title">성장이 막힌 순간, 더 배우지 말고 ‘잊어야’ 하는 이유</span>
             <span class="arow__arrow" aria-hidden="true">↗</span>
           </a>
           <a class="arow" href="https://publy.co/content/8028" target="_blank" rel="noopener">
             <span class="arow__year">2026</span>
+            <span class="arow__tag">조직관리</span>
             <span class="arow__title">리더의 말솜씨는 죄가 없다, 당신의 지시에 ‘구조’가 없을 뿐</span>
             <span class="arow__arrow" aria-hidden="true">↗</span>
           </a>
           <a class="arow" href="https://publy.co/content/7610" target="_blank" rel="noopener">
             <span class="arow__year">2024</span>
+            <span class="arow__tag">조직관리</span>
             <span class="arow__title">조직을 단단하게 만드는 리더의 조직문화 구조화 3단계 노하우</span>
             <span class="arow__arrow" aria-hidden="true">↗</span>
           </a>
           <a class="arow" href="https://publy.co/content/6967" target="_blank" rel="noopener">
             <span class="arow__year">2022</span>
+            <span class="arow__tag">조직관리</span>
             <span class="arow__title">‘팀원 평가 어떻게 하는 건데’ 능력 수치화 통한 인사평가법</span>
             <span class="arow__arrow" aria-hidden="true">↗</span>
           </a>
@@ -926,7 +947,10 @@ a.proof__link:hover{opacity:.7}
       <div class="wgroup">
         <span class="wgroup__label">Essay · Brunch</span>
         <div class="article-list">
-          <p class="wsoon">Coming soon</p>
+          <a class="arow arow--more" href="https://brunch.co.kr/@postmind" target="_blank" rel="noopener">
+            <span class="arow__title">브런치에서 93편 보기</span>
+            <span class="arow__arrow" aria-hidden="true">↗</span>
+          </a>
         </div>
       </div>
     </div>
@@ -1142,6 +1166,25 @@ a.proof__link:hover{opacity:.7}
     var open = panel.hasAttribute('hidden');
     if (open) panel.removeAttribute('hidden'); else panel.setAttribute('hidden','');
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+})();
+
+(function(){
+  document.querySelectorAll('.article-list[data-max]').forEach(function(list){
+    var max = parseInt(list.getAttribute('data-max'), 10);
+    var items = Array.prototype.slice.call(list.querySelectorAll('.arow'));
+    if (items.length <= max) return;
+    items.slice(max).forEach(function(el){ el.setAttribute('hidden',''); });
+    var remaining = items.length - max;
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'wmore';
+    btn.textContent = '+ ' + remaining + '개 더보기';
+    btn.addEventListener('click', function(){
+      items.slice(max).forEach(function(el){ el.removeAttribute('hidden'); });
+      btn.remove();
+    });
+    list.appendChild(btn);
   });
 })();
 
