@@ -273,6 +273,26 @@ a{color:inherit;text-decoration:none}
 .wrow.linked:hover .wrow__t,.wrow.linked:hover .wrow__a{color:var(--accent)}
 .wrow.linked:hover .wrow__a{transform:translate(6px,-6px)}
 .wsoon{padding:1.9rem 0;font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;color:var(--ink-40);text-transform:uppercase}
+
+/* ---------- compact article list (scales cleanly as more are added) ---------- */
+.article-list{margin-top:.5rem}
+.arow{
+  display:flex;align-items:baseline;gap:1.1rem;
+  padding:.85rem 0;border-top:1px solid var(--rule);
+  text-decoration:none;color:inherit;
+}
+.article-list .arow:last-child{border-bottom:1px solid var(--rule)}
+.arow__year{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--ink-40);flex:none;width:2.6em}
+.arow__title{flex:1;font-weight:600;font-size:.92rem;letter-spacing:-.01em;line-height:1.4;transition:color .3s}
+.arow__arrow{flex:none;color:var(--ink-40);transition:color .3s,transform .4s cubic-bezier(.16,1,.3,1)}
+.arow:hover .arow__title,.arow:hover .arow__arrow{color:var(--accent)}
+.arow:hover .arow__arrow{transform:translate(4px,-4px)}
+@media(max-width:600px){
+  .arow{flex-wrap:wrap;gap:.3rem 1rem}
+  .arow__title{flex:1 1 100%;order:3}
+  .arow__year{order:1}
+  .arow__arrow{order:2;margin-left:auto}
+}
 @media(max-width:900px){
   .wrow__meta{grid-column:1/-1;margin-bottom:.6rem}
   .wrow__t{grid-column:1/span 11}
@@ -853,16 +873,33 @@ a.proof__link:hover{opacity:.7}
           </span>
         </h3>
       </div>
-      <a class="wrow linked" href="https://publy.co/content/8114" target="_blank" rel="noopener">
-        <span class="wrow__meta">Article</span>
-        <h3 class="wrow__t">성장이 막힌 순간, 더 배우지 말고 ‘잊어야’ 하는 이유</h3>
-        <span class="wrow__a" aria-hidden="true">↗</span>
-      </a>
-      <a class="wrow linked" href="https://publy.co/content/8028" target="_blank" rel="noopener">
-        <span class="wrow__meta">Article</span>
-        <h3 class="wrow__t">리더의 말솜씨는 죄가 없다, 당신의 지시에 ‘구조’가 없을 뿐</h3>
-        <span class="wrow__a" aria-hidden="true">↗</span>
-      </a>
+      <div class="article-list">
+        <a class="arow" href="https://publy.co/content/8153" target="_blank" rel="noopener">
+          <span class="arow__year">2026</span>
+          <span class="arow__title">번아웃 직전에도 업무 퀄리티를 지키는 ‘저전력 모드’ 사용법</span>
+          <span class="arow__arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="arow" href="https://publy.co/content/8114" target="_blank" rel="noopener">
+          <span class="arow__year">2026</span>
+          <span class="arow__title">성장이 막힌 순간, 더 배우지 말고 ‘잊어야’ 하는 이유</span>
+          <span class="arow__arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="arow" href="https://publy.co/content/8028" target="_blank" rel="noopener">
+          <span class="arow__year">2026</span>
+          <span class="arow__title">리더의 말솜씨는 죄가 없다, 당신의 지시에 ‘구조’가 없을 뿐</span>
+          <span class="arow__arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="arow" href="https://publy.co/content/7610" target="_blank" rel="noopener">
+          <span class="arow__year">2024</span>
+          <span class="arow__title">조직을 단단하게 만드는 리더의 조직문화 구조화 3단계 노하우</span>
+          <span class="arow__arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="arow" href="https://publy.co/content/6967" target="_blank" rel="noopener">
+          <span class="arow__year">2022</span>
+          <span class="arow__title">‘팀원 평가 어떻게 하는 건데’ 능력 수치화 통한 인사평가법</span>
+          <span class="arow__arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
       <p class="wsoon">More essays, research &amp; books — in progress</p>
     </div>
   </div>
