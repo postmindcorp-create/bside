@@ -428,10 +428,12 @@ a{color:inherit;text-decoration:none}
 .work__main{grid-column:3/span 7}
 .work__title{font-weight:700;font-size:clamp(1.3rem,2.6vw,2rem);letter-spacing:-.03em;transition:color .35s}
 .work__desc{color:var(--ink-60);font-size:.97rem;line-height:1.8;margin-top:.9rem;max-width:34em}
+.work__meta,.work__main,.work__title,.work__desc,.work__num,.work__period{border-top:0 none}
 .work__arrow{grid-column:12/span 1;justify-self:end;font-size:1.4rem;color:var(--ink-40);transition:transform .5s cubic-bezier(.16,1,.3,1),color .35s}
 .work.linked:hover{padding-left:clamp(.5rem,1.5vw,1.5rem)}
-.work.linked:hover .work__title,.work.linked:hover .work__arrow{color:var(--accent)}
+.work.linked:hover .work__title,.work.linked:hover .work__title-link,.work.linked:hover .work__arrow{color:var(--accent)}
 .work.linked:hover .work__arrow{transform:translate(6px,-6px)}
+.work__title-link{color:inherit}
 .soon{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;color:var(--ink-40);text-transform:uppercase}
 @media(max-width:900px){
   .work__meta{grid-column:1/-1;flex-direction:row;gap:1rem;margin-bottom:1rem}
@@ -644,19 +646,19 @@ a.proof__link:hover{opacity:.7}
         </div>
       </div>
 
-      <a class="work linked" href="#writing">
+      <div class="work linked">
         <div class="work__grid">
           <div class="work__meta">
             <span class="work__num">03</span>
             <span class="work__period">Published · 2026</span>
           </div>
           <div class="work__main">
-            <h3 class="work__title">Sequence Thinking</h3>
+            <h3 class="work__title"><a class="work__title-link" href="#writing">Sequence Thinking</a></h3>
             <p class="work__desc">성장과 변화에는 순서가 있다는 문제의식에서 출발해, 그 과정을 8개의 Sequence로 구조화했습니다. 책, 강의, 기고로 확장하며 계속 다듬고 있는 연구입니다. 이 사고방식은 실제 브랜드 운영에서도 검증됐습니다 — <a class="award-link" href="https://www.wylie.co.kr/wylieTimes/view/66" target="_blank" rel="noopener">크래프트하인즈(소셜어워드)</a>와 <a class="award-link" href="https://www.wylie.co.kr/company" target="_blank" rel="noopener">순수한면(2024 앤어워드)</a> 캠페인이 그 결과입니다.</p>
           </div>
-          <span class="work__arrow" aria-hidden="true">↗</span>
+          <a class="work__arrow" href="#writing" aria-label="Writing 섹션으로 이동">↗</a>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 </section>
@@ -1004,13 +1006,18 @@ a.proof__link:hover{opacity:.7}
       </div>
       <div class="crow2">
         <span class="crow2__when">2026</span>
-        <div class="crow2__org">석사 학위 취득<span class="crow2__role" style="display:block">Research</span></div>
-        <p class="crow2__desc">숏폼 영상 광고와 소비자 구매태도에 관한 문헌연구로 석사 과정을 마쳤습니다.</p>
+        <div class="crow2__org">석사 학위 취득 · 한양대학교<span class="crow2__role" style="display:block">Research</span></div>
+        <p class="crow2__desc">한양대학교 ERICA캠퍼스 신문방송학 대학원에서, 숏폼 영상 광고와 소비자 구매태도에 관한 문헌연구로 석사 과정을 마쳤습니다.</p>
       </div>
       <div class="crow2">
-        <span class="crow2__when">—</span>
+        <span class="crow2__when">2024</span>
         <div class="crow2__org">특허 2건<span class="crow2__role" style="display:block">Marketing Tech</span></div>
-        <p class="crow2__desc">마케팅 기술 관련 특허를 보유하고 있습니다.</p>
+        <p class="crow2__desc">(주)와일리 특허권으로 공동 발명자로 등재되어 있습니다 — <a class="award-link" href="https://patents.google.com/patent/KR102662262B1/ko" target="_blank" rel="noopener">구독형 공유 광고 플랫폼 서비스 제공 시스템</a>(10-2662262), <a class="award-link" href="https://patents.google.com/patent/KR102662258B1/ko" target="_blank" rel="noopener">자율학습 기반 광고캠페인 추천 서비스 제공 시스템</a>(10-2662258).</p>
+      </div>
+      <div class="crow2">
+        <span class="crow2__when">출원중</span>
+        <div class="crow2__org">상표권 2건<span class="crow2__role" style="display:block">Marketing Tech</span></div>
+        <p class="crow2__desc">마케팅 기술 관련 상표권을 출원 중입니다.</p>
       </div>
     </div>
 
