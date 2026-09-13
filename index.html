@@ -91,7 +91,7 @@ a{color:inherit;text-decoration:none}
 .wrap{max-width:1560px;margin:0 auto;padding:0 var(--pad)}
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
 .section{padding:var(--sec) 0}
-#top,#work,#philosophy,#lab,#knowledge,#writing,#cw,#career,#about,#contact{scroll-margin-top:90px}
+#top,#work,#philosophy,#lab,#writing,#cw,#career,#about,#contact{scroll-margin-top:90px}
 .section.same{border-top:1px solid var(--rule)}
 
 /* ---------- type ---------- */
@@ -123,6 +123,7 @@ a{color:inherit;text-decoration:none}
 .hero{padding:clamp(8rem,18vh,13rem) 0 clamp(4.5rem,9vh,7.5rem)}
 .hero__top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;border-bottom:1px solid var(--rule);padding-bottom:1rem}
 .hero__title{font-weight:800;line-height:.82;font-size:clamp(6rem,26vw,26rem);margin:clamp(2rem,5vw,4rem) 0 -.06em;transform:scaleY(1.06);transform-origin:bottom left}
+.hero__byline{font-weight:700;font-size:clamp(1.6rem,3.4vw,2.8rem);letter-spacing:-.02em;margin-top:.6rem;color:var(--ink)}
 .hero__title .dot{color:var(--mist)}
 .hero__lower{margin-top:clamp(2.5rem,6vw,5rem);align-items:end}
 .hero__slogan{grid-column:1/span 7;font-weight:700;line-height:1;font-size:clamp(2.4rem,5.8vw,4.9rem)}
@@ -581,24 +582,10 @@ a.proof__link:hover{opacity:.7}
 
     <h1 class="hero__title cond">B<span class="dot">.</span>Side<span class="sr-only"> — 차준영, Context Weaver</span></h1>
 
-    <div class="grid hero__lower">
-      <p class="hero__slogan cond">
-        Deep in <span class="accent">Base</span>.<br>
-        Wide in <span class="accent">Side</span>.
-      </p>
-      <div class="hero__meta">
-        <p class="hero__formula">Base <span class="accent">×</span> Side <span class="accent">=</span> Perspective.</p>
-        <p class="body">
-          나의 Base를 깊게 만들고,<br>
-          다양한 Side를 탐색해<br>
-          새로운 Perspective를 만듭니다.
-        </p>
-      </div>
-    </div>
+    <p class="hero__byline cond rv">차준영 <span class="accent">· Context Weaver</span></p>
 
-    <div class="hero__id rv">
+    <div class="hero__id rv" style="margin-top:clamp(2.5rem,6vw,4.5rem)">
       <div class="hero__id__row">
-        <p class="hero__id__name">차준영 <span>· Context Weaver</span></p>
         <div style="flex:1 1 22em">
           <p class="hero__id__desc">마케팅을 기반으로 AI, 조직, 교육을 연결해 성과와 시스템을 만듭니다.</p>
           <p class="hero__id__tags">15+ YEARS IN MARKETING · LEADER · AUTHOR · LECTURER</p>
@@ -643,7 +630,7 @@ a.proof__link:hover{opacity:.7}
           </div>
           <div class="work__main">
             <h3 class="work__title">AI &amp; Marketing System</h3>
-            <p class="work__desc">현장에서 반복되는 마케팅 진단과 실행을 AI로 대체·보완할 수 있는지 직접 실험합니다. 자동화 워크플로와 AI 기반 콘텐츠·분석 도구를 팀 업무에 적용하며 가능성과 한계를 기록합니다. 미래전략실과 함께 개발한 광고 인사이트 플랫폼 'Fromto X'로 2024년 <a class="award-link" href="https://ditoday.com/%EC%99%80%EC%9D%BC%EB%A6%AC-%EA%B4%91%EA%B3%A0-%EC%9D%B8%EC%82%AC%EC%9D%B4%ED%8A%B8-%ED%94%8C%EB%9E%AB%ED%8F%BC-fromto-x%EB%A1%9C-ai-%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%96%B4%EC%9B%8C/" target="_blank" rel="noopener">AI 서비스 어워드 대상</a>을 수상했습니다.</p>
+            <p class="work__desc">현장에서 반복되는 마케팅 진단과 실행을 AI로 대체·보완할 수 있는지 직접 실험합니다. 소상공인 컨설팅에서 AI가 데이터를 읽고 문제와 실행안을 제안할 수 있는지, 자동화 워크플로와 AI 기반 콘텐츠·분석 도구를 팀 업무에 어디까지 적용할 수 있는지 그 가능성과 한계를 기록합니다. 미래전략실과 함께 개발한 광고 인사이트 플랫폼 'Fromto X'로 2024년 <a class="award-link" href="https://ditoday.com/%EC%99%80%EC%9D%BC%EB%A6%AC-%EA%B4%91%EA%B3%A0-%EC%9D%B8%EC%82%AC%EC%9D%B4%ED%8A%B8-%ED%94%8C%EB%9E%AB%ED%8F%BC-fromto-x%EB%A1%9C-ai-%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%96%B4%EC%9B%8C/" target="_blank" rel="noopener">AI 서비스 어워드 대상</a>을 수상했습니다.</p>
           </div>
         </div>
       </div>
@@ -766,74 +753,15 @@ a.proof__link:hover{opacity:.7}
           </div>
         </div>
       </div>
-
-      <div class="exp exp--static">
-        <div class="exp__grid">
-          <div class="exp__id">
-            <span class="label">EXP.002</span>
-            <span class="exp__status">○ Field Test</span>
-          </div>
-          <div class="exp__main">
-            <h3 class="exp__q">AI는 소상공인의 마케팅 문제를 어디까지 진단할 수 있을까?</h3>
-            <p class="exp__d">실제 컨설팅 경험을 바탕으로 AI가 데이터를 읽고 문제와 실행안을 제안할 수 있는지 실험합니다.</p>
-          </div>
-        </div>
-      </div>
-
-      <a class="exp" href="#writing">
-        <div class="exp__grid">
-          <div class="exp__id">
-            <span class="label">EXP.003</span>
-            <span class="exp__status pub">■ Published</span>
-          </div>
-          <div class="exp__main">
-            <h3 class="exp__q">성장에는 순서가 있을까?</h3>
-            <p class="exp__d">성장과 변화의 과정을 8개의 Sequence로 구조화했고, 2026년 『시퀀스씽킹』으로 출간했습니다.</p>
-          </div>
-          <span class="exp__arrow" aria-hidden="true">↗</span>
-        </div>
-      </a>
     </div>
   </div>
 </section>
 
-<section class="section t-light same" id="knowledge">
-  <div class="wrap">
-    <div class="grid head rv">
-      <span class="label head__label">04 / What I Know So Far</span>
-      <h2 class="h-display cond head__title">Practice first.<br>Then perspective.</h2>
-    </div>
-
-    <div class="grid rv">
-      <div class="know">
-        <span class="label label--a">Marketing</span>
-        <h3>Marketing Practice</h3>
-        <p>200여 개 업체를 만나며 경험한 광고, 퍼포먼스, 브랜드, 소상공인 마케팅.</p>
-      </div>
-      <div class="know">
-        <span class="label label--a">AI &amp; Automation</span>
-        <h3>AI in Practice</h3>
-        <p>마케팅 자동화와 AI 활용, 그리고 직접 만들어보며 발견한 가능성과 한계.</p>
-      </div>
-      <div class="know">
-        <span class="label label--a">Work &amp; Organization</span>
-        <h3>How Work Works</h3>
-        <p>팀을 이끌고 시스템을 만들며 배운 리더십, 평가, 업무 구조화와 조직 성장.</p>
-      </div>
-      <div class="know">
-        <span class="label label--a">Learning &amp; Growth</span>
-        <h3>Learning by Teaching</h3>
-        <p>대학과 기업에서 가르치고 다시 배우고, 책을 쓰며 고민한 성장과 학습.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= 05 PROOF ================= -->
+<!-- ================= 04 PROOF ================= -->
 <section class="section t-light same">
   <div class="wrap">
     <div class="grid head rv">
-      <span class="label head__label">05 / Proof of Work</span>
+      <span class="label head__label">04 / Proof of Work</span>
       <h2 class="h-display cond head__title">Thinking<br>through doing.</h2>
     </div>
 
@@ -854,7 +782,7 @@ a.proof__link:hover{opacity:.7}
         <a class="proof__link" href="#writing">
           <span class="proof__n cond">1</span><span class="proof__l">Book<br>Published</span>
         </a>
-        <p class="proof__note">성장의 순서를 정리한 『시퀀스씽킹』을 2026년에 출간했습니다.</p>
+        <p class="proof__note">성장의 순서를 정리한 『시퀀스씽킹』을 2026년에 출간, 교보문고 POD 자기계발 부문 주간 베스트셀러 2위에 올랐습니다.</p>
       </div>
       <div class="proof__i">
         <a class="proof__link" href="#career">
@@ -882,7 +810,7 @@ a.proof__link:hover{opacity:.7}
 <section class="section t-light same" id="writing">
   <div class="wrap">
     <div class="grid head rv">
-      <span class="label head__label">06 / Writing</span>
+      <span class="label head__label">05 / Writing</span>
       <h2 class="h-display cond head__title">Ideas deserve<br>a longer life.</h2>
       <div class="head__note platforms">
         <a class="platform-chip" href="https://publy.co/profile/453743" target="_blank" rel="noopener">
@@ -901,12 +829,14 @@ a.proof__link:hover{opacity:.7}
           <div class="arow arow--book">
             <span class="arow__year">2026</span>
             <span class="arow__title">『시퀀스씽킹』</span>
+            <span class="arow__tag">교보문고 자기계발 주간 2위</span>
             <span class="store-chips">
               <a class="store-chip" href="https://product.kyobobook.co.kr/detail/S000219570912" target="_blank" rel="noopener" aria-label="교보문고에서 구매">교보</a>
               <a class="store-chip" href="https://www.yes24.com/product/goods/184345402" target="_blank" rel="noopener" aria-label="YES24에서 구매">YES24</a>
               <a class="store-chip" href="https://www.aladin.co.kr/shop/wproduct.aspx?ISBN=K922137410" target="_blank" rel="noopener" aria-label="알라딘에서 구매">알라딘</a>
               <a class="store-chip" href="https://www.ypbooks.co.kr/books/202604010836023854" target="_blank" rel="noopener" aria-label="영풍문고에서 구매">영풍문고</a>
               <a class="store-chip" href="https://ridibooks.com/books/4381000654" target="_blank" rel="noopener" aria-label="리디북스에서 구매">리디북스</a>
+              <a class="store-chip" href="https://festbook.co.kr/mychargo/" target="_blank" rel="noopener" aria-label="작가 소개 페이지">작가 소개</a>
             </span>
           </div>
         </div>
@@ -1002,7 +932,7 @@ a.proof__link:hover{opacity:.7}
 <section class="section t-deep" id="cw">
   <div class="wrap">
     <div class="grid head rv">
-      <span class="label head__label">07 / Who I Am</span>
+      <span class="label head__label">06 / Who I Am</span>
     </div>
 
     <div class="grid rv">
@@ -1024,7 +954,7 @@ a.proof__link:hover{opacity:.7}
 <section class="section t-deep same" id="career">
   <div class="wrap">
     <div class="grid head rv">
-      <span class="label head__label">08 / Career Highlights</span>
+      <span class="label head__label">07 / Career Highlights</span>
       <h2 class="h-display cond head__title">Roles,<br>responsibilities<br>&amp; transitions.</h2>
     </div>
 
@@ -1036,8 +966,18 @@ a.proof__link:hover{opacity:.7}
       </div>
       <div class="crow2">
         <span class="crow2__when">2021—</span>
-        <div class="crow2__org">University Lecturer<span class="crow2__role" style="display:block">초빙·겸임 강의</span></div>
-        <p class="crow2__desc">대학에서 마케팅 및 관련 과목을 가르치며, 현장의 경험을 이론과 연결하는 작업을 이어오고 있습니다.</p>
+        <div class="crow2__org">University Lecturer<span class="crow2__role" style="display:block">한양대학교 · 홍익대학교</span></div>
+        <p class="crow2__desc">한양대·홍익대에서 마케팅 및 관련 과목을 가르치며, 현장의 경험을 이론과 연결하는 작업을 이어오고 있습니다.</p>
+      </div>
+      <div class="crow2">
+        <span class="crow2__when">Ongoing</span>
+        <div class="crow2__org">소상공인 강의<span class="crow2__role" style="display:block">지역 순회</span></div>
+        <p class="crow2__desc">지역별 소상공인을 대상으로 마케팅 강의를 진행하고 있습니다.</p>
+      </div>
+      <div class="crow2">
+        <span class="crow2__when">기업 강의</span>
+        <div class="crow2__org">기업 초청 강의<span class="crow2__role" style="display:block">생활용품 제조기업</span></div>
+        <p class="crow2__desc">기업 초청으로 마케팅 관련 강의를 진행했습니다.</p>
       </div>
       <div class="crow2">
         <span class="crow2__when">2026</span>
@@ -1136,7 +1076,7 @@ a.proof__link:hover{opacity:.7}
 <section class="section t-deep same" id="about">
   <div class="wrap">
     <div class="grid head rv">
-      <span class="label head__label">09 / About</span>
+      <span class="label head__label">08 / About</span>
       <h2 class="h-display cond head__title">Why B.Side?</h2>
     </div>
 
@@ -1159,7 +1099,7 @@ a.proof__link:hover{opacity:.7}
 <!-- ================= CONTACT ================= -->
 <footer class="contact t-abyss" id="contact">
   <div class="wrap">
-    <span class="label">10 / Contact</span>
+    <span class="label">09 / Contact</span>
     <h2 class="contact__h cond rv" style="margin-top:2rem">Let’s explore<br>what’s beside.</h2>
     <p class="contact__sub rv">강의, 기고, 컨설팅과 새로운 협업에 열려 있습니다.</p>
 
